@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyHub</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="icons/logo.svg" alt="logo"></a>
+        <div class="header-flex">
+            <div class="header-nav">
+                <div class="header-catalog-btn btn" onclick="showCatalog()">Каталог игр</div>
+                <div class="header-search-wrap">
+                    <input type="button" class="search-btn btn">
+                    <input type="search" class="search-bar">
+                </div>
+            </div>
+            <nav class="header-nav">
+                <li class="header-nav-item"><div class="header-login-btn btn">Войти</div></li>
+                <li class="header-nav-item"><div class="header-favorite btn"><svg class="btn-hov" width="100%" height="100%" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5355 3.46436C19.4881 5.41698 19.4881 8.5828 17.5355 10.5354L10.7071 17.3639C10.3166 17.7544 9.68341 17.7544 9.29288 17.3639L2.46447 10.5354C0.511845 8.5828 0.511845 5.41698 2.46447 3.46436C4.0168 1.91202 5.89056 1.43671 7.78125 2.35927C8.53167 2.72543 9.51561 3.46436 9.99999 4.42958C10.4844 3.46436 11.4683 2.72543 12.2187 2.35927C14.1094 1.43671 15.9832 1.91202 17.5355 3.46436Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </div></li>
+                <li class="header-nav-item"><div class="header-basket btn"><svg class="btn-hov" width="100%" height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 11H12M18 6V17C18 18.1046 17.1046 19 16 19H4C2.89543 19 2 18.1046 2 17V6M19 6V3C19 1.89543 18.1046 1 17 1H3C1.89543 1 1 1.89543 1 3V6H19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </div></li>
+            </nav>
+        </div>
+        <div class="modal-catalog modal">
+            <div class="modal-catalog__categories">
+                <ul class="modal-catalog__categories-fast-categories-list">
+                    <li class="modal-catalog__categories-fast-categories-list-item"><a href="#">Лидеры продаж</a></li>
+                    <li class="modal-catalog__categories-fast-categories-list-item"><a href="#">Новинки</a></li>
+                    <li class="modal-catalog__categories-fast-categories-list-item"><a href="#">Предзаказы</a></li>
+                    <li class="modal-catalog__categories-fast-categories-list-item"><a href="#">Скидки</a></li>
+                </ul>
+                <div class="modal-catalog__categories-genres">
+                    <div class="modal-catalog__categories-title">Жанры</div>
+                    <ul class="modal-catalog__categories-list">
+                        <li class="modal-catalog__categories-list-item"><a href="#">Инди</a></li>
+                        <li class="modal-catalog__categories-list-item"><a href="#">Экшен</a></li>
+                        <li class="modal-catalog__categories-list-item"><a href="#">Симуляторы</a></li>
+                        <li class="modal-catalog__categories-list-item"><a href="#">Стратегии</a></li>
+                        <li class="modal-catalog__categories-list-item"><a href="#">Гонки</a></li>
+                        <li class="modal-catalog__categories-list-item"><a href="#">Приключения</a></li>
+                        <li class="modal-catalog__categories-list-item"><a href="#">Онлайн</a></li>
+                    </ul>
+                </div>
+                <div class="modal-catalog__categories-publishers">
+                    <div class="modal-catalog__categories-title">Издатели</div>
+                    <ul class="modal-catalog__categories-list">
+                        <li class="modal-catalog__categories-list-item"><a href="#">Capcom</a></li>
+                        <li class="modal-catalog__categories-list-item"><a href="#">Ubisoft</a></li>
+                        <li class="modal-catalog__categories-list-item"><a href="#">Electronic Arts</a></li>
+                        <li class="modal-catalog__categories-list-item"><a href="#">Bethesda Softworks</a></li>
+                    </ul>
+                </div>
+                <div class="modal-catalog__categories-developers">
+                    <div class="modal-catalog__categories-title">Разработчики</div>
+                    <ul class="modal-catalog__categories-list">
+                        <li class="modal-catalog__categories-list-item"><a href="#">Да</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-login modal"></div>
+        <div class="modal-favorite modal"></div>
+        <div class="modal-basket modal"></div>
+    </header>
+    <main class="main-section">
+        <div class="main-section-slider">
+            <div class="slider-list"></div>
+            <div class="slider-prev"><img src=""></div>
+            <div class="slider-next"><img src=""></div>
+        </div>
+        <div class="main-section-cards">
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-column">
+            <span class="footer-column-title">Компания</span>
+            <a href="#" class="footer-column-link">О нас</a>
+            <a href="#" class="footer-column-link">Контакты</a>
+            <a href="#" class="footer-column-link"></a>
+        </div>
+        <div class="footer-column">
+            <span class="footer-column-title">Вакансии</span>
+            <a href="#" class="footer-column-link">Поддержка</a>
+            <a href="#" class="footer-column-link">Создатели контента</a>
+            <a href="#" class="footer-column-link">Стримеры</a>
+        </div>
+        <div class="footer-column">
+            <span class="footer-column-title">Пользователям</span>
+            <a href="#" class="footer-column-link">Избранное</a>
+            <a href="#" class="footer-column-link">Корзина</a>
+            <a href="#" class="footer-column-link">Промокоды</a>
+        </div>
+        <div class="footer-column">
+            <span class="footer-column-title">Продавцам</span>
+            <a href="#" class="footer-column-link">Мои товары</a>
+            <a href="#" class="footer-column-link">Личный кабинет</a>
+            <a href="#" class="footer-column-link">Условия сотрудничества</a>
+        </div>
+    </footer>
+</body>
+</html>

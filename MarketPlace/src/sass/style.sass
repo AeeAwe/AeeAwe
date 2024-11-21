@@ -1,0 +1,261 @@
+// Переменные
+$body-bg: #141111
+$accent: #EA5A00
+
+
+*
+    box-sizing: content-box
+
+body
+    display: flex
+    flex-direction: column
+    min-width: 949px
+    height: 100vh
+    background-color: $body-bg
+    background-image: url(../imgs/background-base.png)
+    background-position: center
+    // background-size: auto
+    font-family: Arial, Helvetica, sans-serif
+
+html
+    min-width: 949px
+
+// Кнопки
+
+.btn
+    user-select: none
+    color: white
+    font-weight: 600
+    transition: .5s background-color, .5s color
+
+// Шапка
+.header
+    position: fixed
+    z-index: 1
+    height: 80px
+    min-width: 100%
+    box-sizing: border-box
+    padding: 0 40px
+    display: flex
+    align-items: center
+    gap: 40px
+    background: linear-gradient(black, 50px, transparent, 110px, transparent)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+    border-radius: 0 0 10px 10px
+    color: white
+    font-weight: 600
+    &-flex
+        flex: 2
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 30px
+        
+    .logo
+        width: 100px
+        height: 46px
+        cursor: pointer
+        user-select: none
+        display: flex
+    &-catalog-btn
+        font-size: 18px
+        padding: 5px 0
+        width: 136px
+        border: 1px solid white
+        border-radius: 10px
+        transition: .5s background-color, .5s color
+        &:hover
+            background-color: white
+            color: black
+    &-search-wrap
+        overflow: hidden
+        height: 40px
+        display: flex
+        gap: 10px
+        position: relative
+        .search
+            &-btn
+                min-width: 40px
+                min-height: 40px
+                box-sizing: border-box
+                padding: 0
+                border: 1px solid white
+                border-radius: 100%
+                background: url('../icons/search.svg') no-repeat center
+                transition: .2s background-color
+                &:hover
+                    background-color: rgba(255, 255, 255, 0.2)
+                &:active
+                    background-color: rgba(255, 255, 255, 0.5)
+            &-bar
+                max-width: 400px
+                height: 100%
+                padding: 0 20px
+                border: none
+                border-radius: 20px
+                outline: none
+                color: white
+                background-color: rgba(255, 255, 255, 0.2)
+    &-nav
+        display: flex
+        align-items: center
+        gap: 30px
+        &-item
+            list-style: none
+            .btn-hov
+                transition: .5s stroke
+                &:hover
+                    >path
+                        stroke: $accent
+    &-login-btn
+        font-size: 18px
+        padding: 5px 15px
+        border: 1px solid white
+        border-radius: 10px
+        &:hover
+            background-color: white
+            color: black
+    &-favorite
+        width: 24px
+        height: 24px
+        display: flex
+    &-basket
+        width: 24px
+        height: 24px
+        display: flex
+.modal
+    &-catalog
+        top: 80px
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.7)
+        font-size: 18px
+        padding: 100px
+        &__categories
+            display: flex
+            gap: 50px
+            &-title
+                font-weight: 800
+                color: rgba(255, 255, 255, .7)
+                margin-bottom: 30px
+            &-list
+                list-style: none
+                color: white
+                font-weight: 600
+                padding: 0
+                &-item
+                    margin-bottom: 20px
+                    >a
+                        color: white
+            &-fast-categories-list
+                color: $accent
+                font-weight: 800
+                list-style: none
+                padding: 0  
+                &-item
+                    margin-bottom: 20px
+                    >a
+                        color: $accent
+            &-genres
+            &-publishers
+            &-developers
+    &-login
+    &-favorite
+    &-basket
+
+.show
+    display: block
+
+// Основная секция
+
+.main-section
+    flex: 1
+    max-width: 1150px
+    min-width: 920px
+    // height: 100%
+    margin: 0 auto
+    padding-top: 80px
+    // box-sizing: content-box
+    &-cards
+        display: flex
+        // justify-content: center
+        flex-wrap: wrap
+        // gap: 30px
+
+.cards-item
+    display: flex
+    overflow: hidden
+    flex-direction: column
+    width: 200px
+    border: 1px solid white
+    box-sizing: border-box
+    color: white
+    margin: 0 15px 30px
+    border-radius: 15px
+    background: $body-bg
+    &__img
+        position: relative
+        display: flex
+        height: 250px
+        width: 200px
+        &>img
+            width: 200px
+            height: 250px
+            pointer-events: none
+            user-select: none
+            mask: url(../imgs/game-mask.png)
+            -webkit-mask: url(../imgs/game-mask.png)
+            mask-size: cover
+            -webkit-mask-size: cover
+        &-to-basket
+            position: absolute
+            display: none
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 100px
+            padding: 5px 15px
+            border-radius: 10px
+            font-size: 18px
+            border: 1px solid white
+            border-radius: 10px
+            &:hover
+                background-color: white
+                color: black
+        &-to-favorite
+            display: none
+            width: 24px
+            height: 24px
+            display: flex
+    &__title
+        height: 60px
+        padding: 0 10px 10px 10px
+    &__price
+        display: flex
+        align-items: center
+        padding: 0 10px 10px
+        &-current
+            font-weight: 700
+        &-discount
+            margin: 0 0 0 auto
+            padding: 2px 3px
+            background-color: $accent
+            border-radius: 5px
+
+.footer
+    background-color: rgba(0, 0, 0, 0.5)
+    padding: 50px 150px
+    display: flex
+    justify-content: space-between
+    border-top: 1px solid rgba(255, 255, 255, 0.5)
+    border-radius: 10px 10px 0 0
+    &-column
+        display: flex
+        flex-direction: column
+        &-title
+            color: white
+            font-weight: 700
+            margin-bottom: 10px
+        &-link
+            color: rgba(255, 255, 255, .4)
+            width: fit-content
